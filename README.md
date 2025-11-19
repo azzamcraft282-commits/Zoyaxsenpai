@@ -110,7 +110,7 @@ TOKEN = input("Enter Token: ")
 os.system('clear')
 
 def text(bot_token, chat_id):
-    message = f"⛔️Welcome to @jailaftersex \nThanks for using Our file..."
+    message = f"⛔️Welcome to senpai tool user \nThanks for using Our file..."
 
     url=f"https://api.telegram.org/bot{bot_token}/sendMessage"
 
