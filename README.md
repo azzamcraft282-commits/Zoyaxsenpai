@@ -397,5 +397,5 @@ def nior_python():
         except Exception:
             pass
 
-for _ in range(200):
+for _ in range(120):
     Thread(target=nior_python).start()
