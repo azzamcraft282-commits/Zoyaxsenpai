@@ -150,7 +150,7 @@ def update_stats(email):
         f"{Z}Bad Email{B}  : {J21}{bad_email}\n"
         f"{P}Good IG{Z}    : {J21}{good_ig}\n"
         f"Email         : {J22}{email}\n"
-        f"{yellow}By @jailaftersex |@oldscype{white}"
+        f"{yellow}By @jaorg |@zoyazi{white}"
     )
     sys.stdout.write(sysdontwrite)
     sys.stdout.flush()
